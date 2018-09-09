@@ -1,4 +1,4 @@
-package com.gitwebgui.gitwebgui;
+package com.gitwebgui;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
