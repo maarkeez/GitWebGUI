@@ -25,6 +25,11 @@
 	</properties>
 
 	<dependencies>
+
+		<!-- ============================================== -->
+		<!-- Main -->
+		<!-- ============================================== -->
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
@@ -70,7 +75,36 @@
 			<artifactId>spring-boot-starter-tomcat</artifactId>
 		</dependency>
 
+		<!-- Git -->
+		<dependency>
+			<groupId>org.eclipse.jgit</groupId>
+			<artifactId>org.eclipse.jgit</artifactId>
+			<version>5.0.3.201809091024-r</version>
+		</dependency>
+
+		<!-- ============================================== -->
+		<!-- Utils -->
+		<!-- ============================================== -->
+		<!-- Lombok -->
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>1.18.2</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<!-- Apache commons -->
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+			<version>3.8</version>
+		</dependency>
+
+
+
+		<!-- ============================================== -->
 		<!-- Tests -->
+		<!-- ============================================== -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
