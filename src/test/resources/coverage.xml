@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<!DOCTYPE coverage SYSTEM "http://cobertura.sourceforge.net/xml/coverage-04.dtd">
+
+<coverage line-rate="0.0" branch-rate="1.0" lines-covered="0" lines-valid="1" branches-covered="0" branches-valid="0" complexity="0.0" version="2.1.1" timestamp="1537225577741">
+	<sources>
+		<source>C:/Users/dmarq/Documents/Software/GitHub/GitWebGUI/target/generated-sources/annotations</source>
+		<source>--source</source>
+		<source>C:/Users/dmarq/Documents/Software/GitHub/GitWebGUI/src/main/java</source>
+	</sources>
+	<packages>
+		<package name="com.gitwebgui.repository" line-rate="1.0" branch-rate="1.0" complexity="0.0">
+			<classes>
+				<class name="com.gitwebgui.repository.RepositoryRepository" filename="com/gitwebgui/repository/RepositoryRepository.java" line-rate="1.0" branch-rate="1.0" complexity="0.0">
+					<methods>
+					</methods>
+					<lines>
+					</lines>
+				</class>
+				<class name="com.gitwebgui.repository.UserRepository" filename="com/gitwebgui/repository/UserRepository.java" line-rate="1.0" branch-rate="1.0" complexity="0.0">
+					<methods>
+					</methods>
+					<lines>
+					</lines>
+				</class>
+			</classes>
+		</package>
+		<package name="com.gitwebgui.utils.model" line-rate="0.0" branch-rate="1.0" complexity="0.0">
+			<classes>
+				<class name="com.gitwebgui.utils.model.CoveragePackage" filename="com/gitwebgui/utils/model/CoveragePackage.java" line-rate="0.0" branch-rate="1.0" complexity="0.0">
+					<methods>
+						<method name="&lt;init&gt;" signature="()V" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="3" hits="0" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="3" hits="0" branch="false"/>
+					</lines>
+				</class>
+			</classes>
+		</package>
+	</packages>
+</coverage>
