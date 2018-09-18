@@ -32,7 +32,7 @@ public class CustomParser<T extends Object> {
             ObjectDest dest = new ObjectDest();
             Class objClass = obj.getClass();
             try {
-                if (objClass.isAnnotationPresent(DMDObject.class)) {
+                if (obj instanceof ModelInterface && objClass.isAnnotationPresent(DMDObject.class)) {
 
                     DMDObject dmdObject = (DMDObject) objClass.getAnnotation(DMDObject.class);
                     dest.setType(dmdObject.value());
@@ -47,7 +47,7 @@ public class CustomParser<T extends Object> {
                                     ParameterizedType stringListType = (ParameterizedType) f.getGenericType();
                                     Class<?> iterableClass = (Class<?>) stringListType.getActualTypeArguments()[0];
 
-                                    if (iterableClass.isAnnotationPresent(DMDObject.class)) {
+                                    if (obj instanceof ModelInterface && iterableClass.isAnnotationPresent(DMDObject.class)) {
                                         //Is custom class, must do it recursively
 
 
@@ -88,6 +88,7 @@ public class CustomParser<T extends Object> {
             } catch (Exception e) {
                 log.error("Could not parse object: ", e);
             }
+            log.info("Could not parse object of class: " + objClass.getName());
             return null;
         }
     };

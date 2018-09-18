@@ -24,6 +24,8 @@ public class CustomParserTest {
         mwa.getCustomList().add("Field_4ç_in_list");
         mwa.getSubModelList().add(sm);
         mwa.getSubModelList().add(sm2);
+        mwa.getSubModelList2().add(sm);
+        mwa.getSubModelList2().add(sm2);
 
         CustomParser<ModelWithAnnotations> cp = new CustomParser<>();
         ObjectDest od = cp.getObjectDestParser().apply(mwa);
