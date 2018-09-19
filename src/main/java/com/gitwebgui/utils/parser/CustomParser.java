@@ -47,7 +47,7 @@ public class CustomParser<T extends Object> {
                                     ParameterizedType stringListType = (ParameterizedType) f.getGenericType();
                                     Class<?> iterableClass = (Class<?>) stringListType.getActualTypeArguments()[0];
 
-                                    if (obj instanceof ModelInterface && iterableClass.isAnnotationPresent(DMDObject.class)) {
+                                    if (ModelInterface.class.isAssignableFrom(iterableClass) && iterableClass.isAnnotationPresent(DMDObject.class)) {
                                         //Is custom class, must do it recursively
 
 
