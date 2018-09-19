@@ -9,7 +9,7 @@ import java.util.Set;
 
 @DMDObject("model_with_annotation")
 @Data
-public class ModelWithAnnotations implements ModelInterface{
+public class ModelWithAnnotations {
 
     @DMDField("Model_name")
     private String name;

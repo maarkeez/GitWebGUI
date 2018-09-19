@@ -21,7 +21,7 @@ public class CustomParserTest {
         mwa.getCustomList().add("Field_1_in_list");
         mwa.getCustomList().add("Field_2_in_list");
         mwa.getCustomList().add("Field_3_in_list");
-        mwa.getCustomList().add("Field_4ç_in_list");
+        mwa.getCustomList().add("Field_4_in_list");
         mwa.getSubModelList().add(sm);
         mwa.getSubModelList().add(sm2);
         mwa.getSubModelList2().add(sm);

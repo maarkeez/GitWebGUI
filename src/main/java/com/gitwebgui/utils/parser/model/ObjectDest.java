@@ -7,7 +7,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 @Data
-public class ObjectDest implements ModelInterface {
+public class ObjectDest {
 
     private Map<String, Object> fields = new HashMap<>();
     private String type;

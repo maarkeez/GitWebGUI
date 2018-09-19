@@ -2,7 +2,6 @@ package com.gitwebgui.utils.parser;
 
 import com.gitwebgui.utils.parser.model.DMDField;
 import com.gitwebgui.utils.parser.model.DMDObject;
-import com.gitwebgui.utils.parser.model.ModelInterface;
 import com.gitwebgui.utils.parser.model.ObjectDest;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
@@ -21,9 +20,7 @@ public class CustomParser<T extends Object> {
     public CustomParser(){
 
     }
-    public CustomParser(ModelInterface obj){
 
-    }
 
     @Getter
     private Function<T, ObjectDest> objectDestParser = new Function<T, ObjectDest>() {
@@ -32,7 +29,7 @@ public class CustomParser<T extends Object> {
             ObjectDest dest = new ObjectDest();
             Class objClass = obj.getClass();
             try {
-                if (obj instanceof ModelInterface && objClass.isAnnotationPresent(DMDObject.class)) {
+                if (objClass.isAnnotationPresent(DMDObject.class)) {
 
                     DMDObject dmdObject = (DMDObject) objClass.getAnnotation(DMDObject.class);
                     dest.setType(dmdObject.value());
@@ -47,7 +44,7 @@ public class CustomParser<T extends Object> {
                                     ParameterizedType stringListType = (ParameterizedType) f.getGenericType();
                                     Class<?> iterableClass = (Class<?>) stringListType.getActualTypeArguments()[0];
 
-                                    if (ModelInterface.class.isAssignableFrom(iterableClass) && iterableClass.isAnnotationPresent(DMDObject.class)) {
+                                    if ( iterableClass.isAnnotationPresent(DMDObject.class)) {
                                         //Is custom class, must do it recursively
 
 
@@ -55,14 +52,13 @@ public class CustomParser<T extends Object> {
                                         Iterator iter = it.iterator();
                                         log.info("PARSING ITERABLE");
 
+                                        CustomParser cp = new CustomParser();
 
-                                        CustomParser<ModelInterface> cp = new CustomParser<>();
-
-                                        List<ModelInterface> list = new ArrayList<>();
+                                        List list = new ArrayList<>();
                                         while (iter.hasNext()) {
                                             Object itObj = iter.next();
                                             log.info("    - This is the nested iterable object: {}", itObj);
-                                            ObjectDest itObjDest = (ObjectDest) cp.getObjectDestParser().apply((ModelInterface) itObj);
+                                            ObjectDest itObjDest = (ObjectDest) cp.getObjectDestParser().apply(itObj);
                                             if (itObjDest != null) {
                                                 log.info("    - ADDED:{}", itObj);
                                                 list.add(itObjDest);

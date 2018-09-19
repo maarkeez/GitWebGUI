@@ -4,7 +4,7 @@ import lombok.Data;
 
 @DMDObject("SubModel")
 @Data
-public class SubModel implements ModelInterface {
+public class SubModel {
 
     @DMDField("SubModelName")
     private String name;
